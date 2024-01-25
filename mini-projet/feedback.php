@@ -1,45 +1,35 @@
 <?php include 'inc/header.php' ?>  <!--include pour appeler une page dans un sous dossier -->
-        <h2>Feedback</h2>
+        
+<?php
 
+$sql = 'SELECT * FROM feedback';
+$result = mysqli_query($connexion, $sql);
+$feedback = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
+
+
+  <h2>Feedback</h2>
+
+  <?php if(empty($feedback)): ?>
+    <p class="lead">There is no feedback</p>
+  <?php endif; ?>
+
+  <?php foreach($feedback as $item): ?>
         <div style="margin: 15px 0">
           <div style="border: 1px solid #dee2e6; border-radius: 0.25rem">
             <div style="padding: 10px">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                molestias animi earum eos dolorem repellat a quibusdam, aperiam
-                vero repellendus voluptatibus natus deserunt sed doloribus
-                inventore, totam labore maxime perferendis!
-              </p>
-            </div>
-          </div>
-        </div>
 
-        <div style="margin: 15px 0">
-          <div style="border: 1px solid #dee2e6; border-radius: 0.25rem">
-            <div style="padding: 10px">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                molestias animi earum eos dolorem repellat a quibusdam, aperiam
-                vero repellendus voluptatibus natus deserunt sed doloribus
-                inventore, totam labore maxime perferendis!
-              </p>
-            </div>
-          </div>
-        </div>
+            <?php echo $item['body']; ?>
 
-        <div style="margin: 10px 0">
-          <div style="border: 1px solid #dee2e6; border-radius: 0.25rem">
-            <div style="padding: 10px">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                molestias animi earum eos dolorem repellat a quibusdam, aperiam
-                vero repellendus voluptatibus natus deserunt sed doloribus
-                inventore, totam labore maxime perferendis!
-              </p>
+            <div>
+              By <?php echo $item['name']; ?> on <?php echo $item['date']; ?>
+            </div>
+
             </div>
           </div>
         </div>
-      </div>
+        <?php endforeach; ?>
     </main>
     <?php include 'inc/footer.php' ?>
 

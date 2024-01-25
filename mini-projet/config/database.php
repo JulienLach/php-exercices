@@ -12,4 +12,6 @@ if($connexion->connect_error) {
     die('Connexion failed' . $connexion->connect_error);
 }
 
+// echo 'Connexion réussie!';
+
 ?>
