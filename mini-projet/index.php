@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulaire PHP</title>
-  </head>
-  <body>
-    <nav>
-      <div class="container">
-        <a class="navbar-brand" href="#">Formulaire PHP</a>
-        <div class="navbar" id="navbarNav">
-          <ul class="">
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/index.html"
-                >Accueil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/feedback.html"
-                >Feedback</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/about.html"
-                >About</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main>
-      <div>
+<?php include 'inc/header.php' ?>  <!--include pour appeler une page dans un sous dossier -->
         <h2>Feedback</h2>
         <p style="font-size: 1.25rem" class="text-center">Leave feedback</p>
         <form action="" style="margin-top: 4rem; width: 75%">
@@ -89,7 +54,4 @@
             />
           </div>
         </form>
-      </div>
-    </main>
-  </body>
-</html>
+<?php include 'inc/footer.php' ?>

@@ -7,23 +7,23 @@
     <title>Formulaire PHP</title>
   </head>
   <body>
-    <nav style="background-color: #f8f9fa" class="">
+    <nav>
       <div class="container">
         <a class="navbar-brand" href="#">Formulaire PHP</a>
-        <div class="" id="navbarNav">
+        <div class="navbar" id="navbarNav">
           <ul class="">
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/index.html"
+              <a class="nav-link" href="/cours-PHP/mini-projet/index.php"
                 >Accueil</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/feedback.html"
+              <a class="nav-link" href="/cours-PHP/mini-projet/feedback.php"
                 >Feedback</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/about.html"
+              <a class="nav-link" href="/cours-PHP/mini-projet/about.php"
                 >About</a
               >
             </li>
@@ -33,15 +33,4 @@
     </nav>
 
     <main>
-      <div style="margin: 20px auto">
-        <h2>About</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
-          impedit totam porro iure reiciendis autem possimus sapiente, optio,
-          exercitationem ipsum assumenda mollitia, recusandae expedita culpa
-          ratione voluptatem esse quos quam?
-        </p>
-      </div>
-    </main>
-  </body>
-</html>
+      <div>

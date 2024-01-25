@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulaire PHP</title>
-  </head>
-  <body>
-    <nav style="background-color: #f8f9fa" class="navbar navbar-expand-sm">
-      <div class="container">
-        <a class="navbar-brand" href="#">Formulaire PHP</a>
-        <div class="" id="navbarNav">
-          <ul class="">
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/index.html"
-                >Accueil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/feedback.html"
-                >Feedback</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/about.html"
-                >About</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main>
-      <div style="margin: 20px auto">
+<?php include 'inc/header.php' ?>  <!--include pour appeler une page dans un sous dossier -->
         <h2>Feedback</h2>
 
         <div style="margin: 15px 0">
@@ -62,7 +27,7 @@
           </div>
         </div>
 
-        <div style="margin: 15px 0">
+        <div style="margin: 10px 0">
           <div style="border: 1px solid #dee2e6; border-radius: 0.25rem">
             <div style="padding: 10px">
               <p>
@@ -76,5 +41,5 @@
         </div>
       </div>
     </main>
-  </body>
-</html>
+    <?php include 'inc/footer.php' ?>
+
