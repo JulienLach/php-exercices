@@ -1,5 +1,14 @@
 <!-- https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=weather_code&forecast_days=1 -->
 
+<!--
+1. On fetch l'api openmeteo
+2. On récupère un JSON avec la fonction file_get_contents
+3. On transforme ce JSON en tableau PHP avec json_decode
+4. On parcours ce tableau PHP en allant jusqu'a 'weather_code' en prennant l'index 0 du sous tableau weather code
+5. On affiche le code Météo
+6. On affiche une image en fonction du code météo
+-->
+
 <?php
 
 $url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=weather_code&forecast_days=1";
@@ -17,6 +26,9 @@ echo $JSONData;
 
 // Transformer la chaine JSOn en tableau PHP
 $PHParrayDatas = json_decode($JSONData, true);
+
+echo "<br>";
+
 
 // Access the "weather_code" value
 $CodeMeteo = $PHParrayDatas['daily']['weather_code'][0];
