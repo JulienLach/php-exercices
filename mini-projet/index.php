@@ -1,11 +1,9 @@
 <?php include 'inc/header.php' ?>  <!--include pour appeler une page dans un sous dossier -->
         <h2>Feedback</h2>
-        <p style="font-size: 1.25rem" class="text-center">Leave feedback</p>
-        <form action="" style="margin-top: 4rem; width: 75%">
-          <div style="margin-bottom: 1.5rem">
-            <label for="name" style="font-weight: bold; margin-bottom: 0.5rem"
-              >Name</label
-            >
+        <p class="subtitle">Leave feedback</p>
+        <form action="">
+          <div>
+            <label style="font-weight: bold; margin-bottom: 0.5rem" for="name">Name</label>
             <input
               type="text"
               style="width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem"
@@ -50,6 +48,7 @@
                 color: #fff;
                 border: none;
                 cursor: pointer;
+                border-radius: 3px;
               "
             />
           </div>
