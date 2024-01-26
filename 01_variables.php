@@ -1,5 +1,7 @@
 <?php
 
+// https://www.youtube.com/watch?v=BUCiSSyIGGU&list=WL&index=6&t=5450s Cours Travesy Media
+
 /* --------- PHP Data Types --------- */
 /*
 - String - A string is a series of characters surrounded by quotes
