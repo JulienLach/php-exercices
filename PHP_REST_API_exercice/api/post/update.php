@@ -6,7 +6,7 @@
 // Headers
 header('Access-Control-Allow-Origin: *'); // permet d'acceder à l'API publique par tout le monde, sans token sans authentification
 header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: PUT');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 
@@ -23,20 +23,26 @@ $post = new Post($db);
 // GET la data qui est postée
 $data = json_decode(file_get_contents("php://input")); // Ici cela va récupérer n'importe quelle donnée qui est envoyée
 
+// Set le ID pour pouvoir UPDATE
+$post->id = $data->id;
+
 // Mettre la data récupérée dans un post
 $post->title = $data->title;
 $post->body = $data->body;
 $post->author = $data->author;
 $post->category_id = $data->category_id;
 
-// Créer le post
-if($post->create()) {
+// UPDATE le post
+if($post->update()) {
     echo json_encode(
-        array('message' => 'Post crée')
+        array('message' => 'Post mis à jour')
     );
 } else {
     echo json_encode(
-        array('message' => 'Post non crée')
+        array('message' => 'Post non mis à jour')
     );
 }
 // En PHP je doit formater mes tableaux en JSON pour contrairement au JavaScript ou le JSON et directement un objet JavaScript
+
+
+?>

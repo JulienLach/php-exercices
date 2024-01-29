@@ -4,7 +4,7 @@
 // On va intéragir avec une API et requetes HTTP
 
 // Headers
-header('Acces-Control-Allow-Origin: *'); // permet d'acceder à l'API publique par tout le monde, sans token sans authentification
+header('Access-Control-Allow-Origin: *'); // permet d'acceder à l'API publique par tout le monde, sans token sans authentification
 header('Content-Type: application/json');
 
 include_once '../../config/database.php'; // acceder à la page base de donnée

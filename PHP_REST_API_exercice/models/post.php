@@ -126,5 +126,62 @@ class Post { // Uppercase pour les classes en PHP
     }
 
 
+    // Méthode pour Update un post / UPDATE post
+    public function update() {
+        // créer la requete SQL
+        $query = 'UPDATE ' . $this->table . '
+        SET
+            title = :title,
+            body = :body,
+            author = :author,
+            category_id = :category_id
+        WHERE 
+            id = :id
+        ';
+
+        // Préparer le statement
+        $statement = $this->connexion->prepare($query);
+
+        // Nettoyer la donnée qui rentre
+        $this->title = htmlspecialchars(strip_tags($this->title));
+        $this->body = htmlspecialchars(strip_tags($this->body));
+        $this->author = htmlspecialchars(strip_tags($this->author));
+        $this->category_id = htmlspecialchars(strip_tags($this->category_id));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        // Relier les données au statement
+        $statement->bindParam(':title', $this->title);
+        $statement->bindParam(':body', $this->body);
+        $statement->bindParam(':author', $this->author);
+        $statement->bindParam(':category_id', $this->category_id);
+        $statement->bindParam(':id', $this->id);
+
+        // Executer la requete
+        if($statement->execute()) {
+            return true;
+        }
+
+        // Afficher une erreur si ça n'a pas marché
+        printf("Erreur: %s.\n", $statement->error);
+        
+        return false;
+    }
+
+
+    // Méthode DELETE post
+    public function delete() {
+        // Creer la requette
+        $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id'
+        ;
+
+        // Préparer le statement
+        $statement = $this->connexion->prepare($query);
+
+        // Récuperer l'ID
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        // Relier l'ID au statement
+        $statement->bindParam(':id', $this->id);
+    }
 }
 ?>
