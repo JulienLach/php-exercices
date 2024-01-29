@@ -170,18 +170,28 @@ class Post { // Uppercase pour les classes en PHP
 
     // Méthode DELETE post
     public function delete() {
-        // Creer la requette
+        // Créer la requette
         $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id'
         ;
 
         // Préparer le statement
         $statement = $this->connexion->prepare($query);
 
-        // Récuperer l'ID
+        // Netotyer la donnée
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         // Relier l'ID au statement
         $statement->bindParam(':id', $this->id);
+        
+        // Executer la requete
+        if($statement->execute()) {
+            return true;
+        }
+
+        // Afficher une erreur si ça n'a pas marché
+        printf("Erreur: %s.\n", $statement->error);
+        
+        return false;
     }
 }
 ?>
