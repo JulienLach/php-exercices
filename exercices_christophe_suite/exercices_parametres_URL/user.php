@@ -34,10 +34,18 @@ echo '<br>';
         }
 
         // Formulaire avec méthode get
-        if (isset($_GET['lastname']) && isset($_GET['firstname'])) {
+        // if (isset($_GET['lastname']) && isset($_GET['firstname'])) {
+        //     // Stocker les valeurs de "lastname" et "firstname" dans les variables correspondantes
+        //     $lastname = $_GET['lastname'];
+        //     $firstname = $_GET['firstname'];
+        //     echo "lastname : $lastname, firstname : $firstname";
+        // }
+
+        // Formulaire avec méthode post Exercice 2 : partie les formulaires
+        if (isset($_POST['lastname']) && isset($_POST['firstname'])) {
             // Stocker les valeurs de "lastname" et "firstname" dans les variables correspondantes
-            $lastname = $_GET['lastname'];
-            $firstname = $_GET['firstname'];
+            $lastname = $_POST['lastname'];
+            $firstname = $_POST['firstname'];
             echo "lastname : $lastname, firstname : $firstname";
         }
 

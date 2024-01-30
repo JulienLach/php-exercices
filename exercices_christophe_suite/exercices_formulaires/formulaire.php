@@ -9,7 +9,7 @@
 
 <h2>Formulaire PHP</h2>
 
-<form method="get" action="../exercices_parametres_URL/user.php">
+<form method="post" action="../exercices_parametres_URL/user.php">
     <label for="lastname">Nom :</label>
     <input type="text" id="lastname" name="lastname" required>
 
