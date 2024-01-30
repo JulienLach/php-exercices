@@ -1,3 +1,36 @@
 <?php
-echo "page user.php"
+include 'users.php';
+echo '<br>';
+echo '<br>';
+
+// Exercice 3 : Les paramètres d'URL
+
+// Vérifier si le paramètre "id" est présent dans l'URL
+if (isset($_GET['id'])) {
+    // Stocker la valeur de "id" dans la variable $id
+    $id = $_GET['id'];
+    echo "L'ID est défini. La valeur de ' id ' est : " . $id;
+} else {
+    // Rediriger vers la page users.php si le paramètre "id" n'est pas défini dans l'URL
+    header('Location: users.php');
+}
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page user.php</title>
+</head>
+<body>
+    <h3>Page user.php</h3>
+
+    <!-- Exercice 4 : afficher nom et prénom du user + nom/prénom cliquable vers email -->
+    <?php 
+        if(isset($_GET['id'])) {
+            $user = $users[$id];
+            echo '<a href="mail.php?id=0"><u>' . $user['firstname'] . " " . '</u></a>';
+            echo '<a href="mail.php?id=0"><u>' . $user['lastname'] . " " . '</u></a>';
+        }
+    ?>
+</body>
+</html>
