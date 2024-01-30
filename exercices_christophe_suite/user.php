@@ -28,8 +28,36 @@ if (isset($_GET['id'])) {
     <?php 
         if(isset($_GET['id'])) {
             $user = $users[$id];
-            echo '<a href="mail.php?id=0"><u>' . $user['firstname'] . " " . '</u></a>';
-            echo '<a href="mail.php?id=0"><u>' . $user['lastname'] . " " . '</u></a>';
+            echo '<a href="mailto:"><u>' . $user['firstname'] . " " . '</u></a>';
+            echo '<a href="mailto:"><u>' . $user['lastname'] . " " . '</u></a>';
+            echo '<br>';
+        }
+
+        // Exercice 6 : afficher la couleur
+
+        if(isset($_GET['color'])) {
+            $couleur = $_GET['color'];
+            echo $couleur;
+            echo '<br>';
+        }
+
+        if($couleur === "orange") {
+            echo "<p style='color: #ED7F10'>Couleur : $couleur</p>";
+        }
+        if($couleur === "purple") {
+            echo "<p style='color: purple'>Couleur : $couleur</p>";
+        }
+        if($couleur === "blue") {
+            echo "<p style='color: blue'>Couleur : $couleur</p>";
+        }
+        if($couleur === "red") {
+            echo "<p style='color: red'>Couleur : $couleur</p>";
+        }
+        if($couleur === "yellow") {
+            echo "<p style='color: yellow'>Couleur : $couleur</p>";
+        }
+        if($couleur === "green") {
+            echo "<p style='color: green'>Couleur : $couleur</p>";
         }
     ?>
 </body>
