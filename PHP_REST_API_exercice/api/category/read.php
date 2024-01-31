@@ -1,6 +1,6 @@
 <?php
 
-// Ce fichier va intéragir avec le modèle et le fichier post.php
+// Ce fichier va intéragir avec le dossier modèle et le fichier category.php
 // On va intéragir avec une API et requetes HTTP
 
 // Headers
@@ -8,7 +8,7 @@ header('Access-Control-Allow-Origin: *'); // permet d'acceder à l'API publique 
 header('Content-Type: application/json');
 
 include_once '../../config/database.php'; // acceder à la page base de donnée
-include_once '../../models/category.php'; // acceder aux posts
+include_once '../../models/category.php'; // acceder aux categories
 
 // Instancier un objet DB & s'y connecter
 $database = new Database();
@@ -31,25 +31,21 @@ if($nombre > 0) {
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
-        $post_item = array(
+        $category_item = array(
             'id' => $id,
-            'title' => $title,
-            'body' => html_entity_decode($body),
-            'author' => $author,
-            'category_id' => $category_id,
-            'category_name' => $category_name
+            'name' => $name
         );
 
-        // Push chaque post vers le array ['data']
+        // Push chaque categories vers le array ['data']
         array_push($categories_array['data'], $category_item);
     }
     
-    // Transformer notre tableau PHP avec les post en JSON et sortir les valeurs JSON
+    // Transformer notre tableau PHP avec les categories en JSON et sortir les valeurs JSON
     echo json_encode($categories_array);
 
-} else { // Si pas de post
+} else { // Si pas de categories trouvées
     echo json_encode(
-        array('message' => 'Pas de posts trouvés')
+        array('message' => 'Pas de cateories trouvés')
     );
 }
 

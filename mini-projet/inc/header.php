@@ -16,21 +16,21 @@
   <body>
     <nav>
       <div class="container">
-        <a class="navbar-brand" href="/cours-PHP/mini-projet/index.php">Formulaire PHP</a>
+        <a class="navbar-brand" href="/php-exercices/mini-projet/index.php">Formulaire PHP</a>
         <div class="navbar" id="navbarNav">
           <ul class="">
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/index.php"
+              <a class="nav-link" href="/php-exercices/mini-projet/index.php"
                 >Accueil</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/feedback.php"
+              <a class="nav-link" href="/php-exercices/mini-projet/feedback.php"
                 >Feedback</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cours-PHP/mini-projet/about.php"
+              <a class="nav-link" href="/php-exercices/mini-projet/about.php"
                 >About</a
               >
             </li>

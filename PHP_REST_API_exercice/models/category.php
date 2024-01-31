@@ -22,7 +22,8 @@ class Category {
     // Créer la requete
     $query = 'SELECT
         id,
-        name
+        name,
+        created_at
         FROM
         '. $this->table. '
         ORDER BY
