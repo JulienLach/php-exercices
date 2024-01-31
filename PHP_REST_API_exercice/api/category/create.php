@@ -1,6 +1,6 @@
 <?php
 
-// Ce fichier va intéragir avec le dossier modèle et le fichier post.php
+// Ce fichier va intéragir avec le dossier modèle et le fichier category.php
 // On va intéragir avec une API et requetes HTTP
 
 // Headers
@@ -11,39 +11,31 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 
 
 include_once '../../config/database.php'; // acceder à la page base de donnée
-include_once '../../models/post.php'; // acceder aux posts
+include_once '../../models/category.php'; // acceder aux categories
 
 // Instancier un objet DB & s'y connecter
 $database = new Database();
 $db = $database->connect(); // le connect ici est celui qu'on a crée dans la page database.php
 
-// Instancier un objet blog post
-$post = new Post($db);
+// Instancier un objet category
+$category = new Category($db);
 
-// GET la data qui est postée
+// GET la data qui est postée sur Postman
 // Ici cela va récupérer n'importe quelle donnée qui est envoyée avec Postman dans l'onglet Headers ->
-// Ensuite remplir l'onglet Headers avec Key->Content-Type et Value -> application/json
-// Ensuite aller dans l'onglet "Body" dans le sélecteur, sélectionner "raw" et écrire mes données au format JSON avec ce que la requete est sensée récupérer
-// Exemple {
-//          "name" : "Categorie TEST"   
-//         }
-// Enfin cliquer sur "Send" pour éxécuter la requete HTTP
+// Ensuite cliquer sur ----------------
 $data = json_decode(file_get_contents("php://input")); 
 
-// Mettre la data récupérée dans un post
-$post->title = $data->title;
-$post->body = $data->body;
-$post->author = $data->author;
-$post->category_id = $data->category_id;
+// Mettre la data récupérée dans une category
+$category->name = $data->name;
 
-// Créer le post
-if($post->create()) { // ici la méthode create doit etre définie dans le fichier category.php
+// Créer la category
+if($category->create()) {
     echo json_encode(
-        array('message' => 'Post crée')
+        array('message' => 'Catégorie créée')
     );
 } else {
     echo json_encode(
-        array('message' => 'Post non crée')
+        array('message' => 'Catégorie non créée')
     );
 }
 // En PHP je doit formater mes tableaux en JSON pour contrairement au JavaScript ou le JSON et directement un objet JavaScript
