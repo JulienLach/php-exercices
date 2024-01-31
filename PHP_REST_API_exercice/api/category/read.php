@@ -8,25 +8,25 @@ header('Access-Control-Allow-Origin: *'); // permet d'acceder à l'API publique 
 header('Content-Type: application/json');
 
 include_once '../../config/database.php'; // acceder à la page base de donnée
-include_once '../../models/post.php'; // acceder aux posts
+include_once '../../models/category.php'; // acceder aux posts
 
 // Instancier un objet DB & s'y connecter
 $database = new Database();
 $db = $database->connect(); // le connect ici est celui qu'on a crée dans la page database.php
 
-// Instancier un objet blog post
-$post = new Post($db);
+// Instancier un objet category
+$category = new Category($db);
 
-// Lire les blog post avec la requete et la fonction read()
-$result = $post->read();
+// Lire les categories avec la requete et la fonction read()
+$result = $category->read();
 // Avoir le nombre de ligne
 $nombre = $result->rowCount();
 
-// Vérifier si il y a des posts
+// Vérifier si il y a des categories
 if($nombre > 0) {
-    // Créer un tableau des posts
-    $posts_array = array();
-    $posts_array['data'] = array();
+    // Créer un tableau des categories
+    $categories_array = array();
+    $categories_array['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
@@ -41,11 +41,11 @@ if($nombre > 0) {
         );
 
         // Push chaque post vers le array ['data']
-        array_push($posts_array['data'], $post_item);
+        array_push($categories_array['data'], $category_item);
     }
     
     // Transformer notre tableau PHP avec les post en JSON et sortir les valeurs JSON
-    echo json_encode($posts_array);
+    echo json_encode($categories_array);
 
 } else { // Si pas de post
     echo json_encode(
