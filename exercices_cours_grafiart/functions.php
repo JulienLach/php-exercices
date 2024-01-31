@@ -5,4 +5,7 @@ function nav_item(string $lien, string $titre): string { // la fonction retourne
     return '<li>' . $link . '</li>';
   }
 
+
 ?>
+
+
