@@ -1,9 +1,10 @@
 ## Exercice créer une API REST en PHP sans Framework avec méthode CRUD
 
 **Lien du cours/exercice en 3 partie**
-*https://www.youtube.com/watch?v=OEWXbpUMODk*
-*https://www.youtube.com/watch?v=-nq4UbD0NT8*
-*https://www.youtube.com/watch?v=tG2U18EmIu4*
+
+- *https://www.youtube.com/watch?v=OEWXbpUMODk*
+- *https://www.youtube.com/watch?v=-nq4UbD0NT8*
+- *https://www.youtube.com/watch?v=tG2U18EmIu4*
 
 ### Utilisation de Postman
 

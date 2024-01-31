@@ -95,7 +95,7 @@ class Category {
         return false;
     }
 
-    // Méthode DELETE post
+    // Méthode DELETE d'une catégorie
     public function delete() {
         // Créer la requette
         $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id'
