@@ -17,7 +17,21 @@ $supplements = [
     "Pépites de chocolat" => 1,
     "Chantilly" => 0.5
 ];
-$nombreADeviner = 150;
+
+// $nombreADeviner = 150;
+// Calculer la somme en € de la composition de la glace
+$ingredients = []; // initier tous les ingrédients choisi dans un tableau vide
+$total = 0; // initier le total à 0
+if (isset($_GET['parfum'])) {
+    foreach($_GET['parfum'] as $parfum) {
+        if(isset($parfums[$parfum])) {
+            $ingredients[] = $parfum;
+            $total += $parfums[$parfum];
+            
+        }; // Afficher le prix de chaque parfum avec une boucle
+    }
+    echo "prix total de la glace " . $total . " €";
+}
 require 'header.php';
 ?>
 
