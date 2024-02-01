@@ -5,7 +5,7 @@ include 'header.php';
 
 
     <div class="container">
-      <h2>Suite cours PHP grafikart</h2>
+      <h2>Suite cours PHP</h2>
     </div>
   </body>
 </html>
