@@ -15,14 +15,15 @@ include 'header.php';
 //     $nom = $_POST['nom'];
 // }
 
-$user = [
-    'prenom' => 'John',
-    'nom' => 'Doe',
-    'age' => 18
-];
-var_dump(serialize($user));
-var_dump(unserialize(serialize($user)));
-die();
+// $user = [
+//     'prenom' => 'John',
+//     'nom' => 'Doe',
+//     'age' => 18
+// ];
+// setcookie('utilisateur', serialize($user));
+
+
+
 
 ?>
 
