@@ -1,4 +1,6 @@
-<?php $title = "Contact"; include 'header.php';?>
+<?php 
+session_start();
+$title = "Contact"; include 'header.php';?>
 <?php include_once 'functions.php';?>
 <?php include_once 'config.php';
 // Récupérer l'heure d'aujourd'hui $heure
@@ -12,6 +14,10 @@ $ouvert = in_creneaux($heure, $creneaux); // On récupère l'état d'ouverture d
 
 
 <div>
+    <h2>Debug</h2>
+    <pre>
+        <?php var_dump($_SESSION); ?>
+    </pre>
     <h2>Page contact</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla aut consequuntur voluptates autem neque dolor.</p>
 </div>

@@ -1,3 +1,8 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+require_once 'auth.php';?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -26,6 +31,10 @@
           <ul>
             <?php require 'menu.php'; ?>
           </ul>
-        </div>
+          <?php if (est_connecte()): ?>
+            <span>Connecté en tant que Bob</span>
+            <li><a href="/php-exercices/exercices_cours_PHP/logout.php">Se déconnecter</a></li>
+          <?php endif; ?>
+          </div>
       </div>
     </nav>
