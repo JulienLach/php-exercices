@@ -1,12 +1,13 @@
 <?php
 
+// Créer une classe OpenWeather qui permet de récupérer la météo d'une ville donnée.
 class OpenWeather
 {
     private $apiKey;
 
-    public function __construct($apiKey)
+    public function __construct($apiKey) // Clé API OpenWeather
     {
-        $this->apiKey = $apiKey;
+        $this->apiKey = $apiKey; // Clé API OpenWeather fournie par l'utilisateur lors de l'instanciation de la classe
     }
 
     public function getMeteo($city)
