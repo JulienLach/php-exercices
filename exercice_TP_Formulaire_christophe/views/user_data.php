@@ -6,4 +6,3 @@ require_once '../controllers/controller.php';
     echo "Mot de passe : " . $utilisateur->getPassword();
 
 ?>
-

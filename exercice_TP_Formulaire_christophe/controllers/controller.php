@@ -8,8 +8,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     // Création d'une nouvelle instance de l'objet Utilisateur avec les 
     // données saisies en paramètres du constructeur
     $utilisateur = new Utilisateur($email, $password);
-    require_once '../views/user_data.php'; // Le controleur qui renvois vers la vue
 }
+require_once '../views/user_data.php'; // Le controleur renvois vers la vue
+
 ?>
-
-
