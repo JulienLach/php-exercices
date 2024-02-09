@@ -13,7 +13,7 @@ class Utilisateur {
         return $this->email;
     }
     public function setPassword($password) {
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_DEFAULT); // hacher le mot de passe
     }
     public function getPassword() {
         return $this->password;
