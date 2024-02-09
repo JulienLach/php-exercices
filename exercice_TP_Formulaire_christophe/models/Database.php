@@ -6,7 +6,6 @@ class Database {
     private $db_name = 'tp_formulaire_mvc';
     private $username = 'julien';
     private $password = 'mysqlpassword';
-    private $connexion; // propriété pour stocker la connexion à la base de données
 
     // Créer la méthode pour se connecter à la base de données
     public function connect() {

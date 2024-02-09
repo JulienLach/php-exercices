@@ -22,15 +22,15 @@ class Utilisateur {
     // Méthode pour ajouter un utilisateur à la base de données
     public function addUser() {
         // Connexion à la base de données 
-        $db = new Database(); // Créer une nouvelle instance de la classe Database
-        $connexion = $db->connect(); // Appeler la méthode connect de la classe Database pour se connecter à la base de données ici $connexion est un objet PDO
+        $tp_formulaire_mvc = new Database(); // Créer une nouvelle instance de la classe Database
+        $connexion = $tp_formulaire_mvc->connect(); // Appeler la méthode connect de la classe Database pour se connecter à la base de données ici $connexion est un objet PDO
 
         // Requête SQL pour ajouter un utilisateur à la base de données
         $query = 'INSERT INTO users (email, password) VALUES (:email, :password)';
-        $stmt = $connexion->prepare($query);
-        $stmt->bindParam(':email', $this->email);
-        $stmt->bindParam(':password', $this->password);
-        $stmt->execute();
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':email', $this->email);
+        $statement->bindParam(':password', $this->password);
+        $statement->execute();
     }
 }
 
