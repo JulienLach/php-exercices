@@ -13,8 +13,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $utilisateur->setPassword($password);
 
     // Appel de la méthode addUser pour ajouter l'utilisateur à la base de données
-    $utilisateur->addUser(); 
-}
-require_once '../views/user_data.php'; // Le controleur renvois vers la vue
+    $utilisateur->addUser();
 
+}
+
+require_once '../views/user_data.php'; // Le controleur renvois vers la vue
 ?>

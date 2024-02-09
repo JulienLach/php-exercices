@@ -32,6 +32,20 @@ class Utilisateur {
         $statement->bindParam(':password', $this->password);
         $statement->execute();
     }
+
+    // Méthode pour récupérer tous les utilisateurs de la base de données et les afficher
+    public function getUser() {
+        // Connexion à la base de données
+        $tp_formulaire_mvc = new Database();
+        $connexion = $tp_formulaire_mvc->connect();
+
+        // Requête SQL pour récupérer un utilisateur de la base de données
+        $query = 'SELECT * FROM users ORDER BY id DESC';
+        $statement = $connexion->prepare($query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
 
 ?>

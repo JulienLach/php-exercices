@@ -9,3 +9,7 @@
 - Créer une méthode addUser() dans le modèle utilisateur.php pour insérer les données dans la base de données
 
 - Appeller cette méthode dans le contrôleur
+
+- Essayer d'afficher un foreach de chaque utilisateur enregistré avec une méthode getUser définie dans la classe utilisateurs , les afficher directement dans la vue user_data.php
+
+- Trier l'affichage des utilisateurs enregistrés du plus récent au plus ancien
