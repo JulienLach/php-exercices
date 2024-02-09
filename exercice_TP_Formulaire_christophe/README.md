@@ -6,4 +6,6 @@
 
 - Dans la class Utilisateur, connecter la base dans le constructeur, ne pas oublie de déclarer les variables public $connexion; et public $table = 'users';
 
-- Créer une méthode createUser() dans le modèle utilisateur.php pour insérer les données dans la base de donnée
+- Créer une méthode addUser() dans le modèle utilisateur.php pour insérer les données dans la base de données
+
+- Appeller cette méthode dans le contrôleur

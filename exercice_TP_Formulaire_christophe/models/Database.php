@@ -6,7 +6,7 @@ class Database {
     private $db_name = 'tp_formulaire_mvc';
     private $username = 'julien';
     private $password = 'mysqlpassword';
-    private $connexion; // Stocker la connexions pour la réutiliser dans les autres méthodes
+    private $connexion; // propriété pour stocker la connexion à la base de données
 
     // Créer la méthode pour se connecter à la base de données
     public function connect() {
@@ -16,9 +16,6 @@ class Database {
             $this->connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // mettre en place le mode error si on fait une requête et qu'il y a une erreur
         } catch(PDOException $e) {
             echo 'Erreur de connexion' . $e->getMessage();
-        }
-        if ($this->connexion) {
-            echo 'Connexion réussie';
         }
         return $this->connexion; // retourner la connexion pour terminer
     }
