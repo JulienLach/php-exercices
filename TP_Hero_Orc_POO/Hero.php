@@ -47,14 +47,15 @@ class Hero extends Character {
         return $this->health;
     }
 
-    // Tester le fonctionnement de la méthode attacked avant de faire la rageAugmente
+    // Exercice 8 : A terminer
+    public function rageAugmente() {
+        for ($rage = 0 ; $rage < 60 ; $rage = $this->rage) {
+            $this->rage = $this->rage + 30;
+            if ($this->rage = 60) {
 
-    // Exercice 8 : A refaire
-    // public function rageAugmente($coupsRecus) {
-    //     foreach ($coupsRecus as $coup) {
-    //         $this->rage = ($this->rage) + 30;
-    //     }
-    //     return $this->rage;
-    // }
+            }
+        }
+        return $this->rage;
+    }
 }
 ?>
