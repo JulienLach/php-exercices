@@ -3,7 +3,6 @@ require_once '../view/header.php';
 require_once '../controller/liste-patients.php';
 ?>
 
-
 <table>
     <tr>
         <th>Nom</th>
@@ -19,7 +18,7 @@ require_once '../controller/liste-patients.php';
         <td> <?php echo $patient['birthdate'] ?> </td>
         <td> <?php echo $patient['phone'] ?> </td>
         <td> <?php echo $patient['mail'] ?> </td>
-        <td><a href="profil-patient.php?id=<?php echo $patient['id'] ?>">Modifier</a></td>
+        <td><a href="profil-patient.php?id=<?php echo $patient['id'] ?>">Afficher profil</a></td>
     </tr>
     <?php endforeach; ?>
 

@@ -13,4 +13,4 @@ echo "<strong>Date de naissance</strong> : " .$patient['birthdate'] . '<br>';
 echo "<strong>Téléphone</strong> : " . $patient['phone'] . '<br>';
 echo "<strong>Email</strong> : " . $patient['mail'] . '<br>';
 ?>
-<a href="update-patient.php?id=<?php echo $patient['id']; ?>">Modifier profil patient</a>
+<a href="modifier-patient.php?id=<?php echo $patient['id']; ?>">Modifier profil patient</a>

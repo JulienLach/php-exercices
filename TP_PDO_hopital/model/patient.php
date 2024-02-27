@@ -60,4 +60,19 @@ class Patient {
             return $patient;
         }
     }
+
+    public function updatePatient() {
+        if(isset($this->id)) {
+            $connexion = Database::connect();
+            $query = 'UPDATE patients SET lastname = :lastname, firstname = :firstname, birthdate = :birthdate, phone = :phone, mail = :mail WHERE id = :id';
+            $statement = $connexion->prepare($query);
+            $statement->bindParam(':lastname', $this->lastname);
+            $statement->bindParam(':firstname', $this->firstname);
+            $statement->bindParam(':birthdate', $this->birthdate);
+            $statement->bindParam(':mail', $this->mail);
+            $statement->bindParam(':phone', $this->phone);
+            $statement->bindParam(':id', $this->id);
+            $statement->execute();
+        }
+    }
 }
