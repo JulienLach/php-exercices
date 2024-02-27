@@ -1,4 +1,5 @@
-<?php require_once '../model/profil-patient.php';
+<?php
+require_once '../model/profil-patient.php';
 
 $patient = new ReadPatientById();
 $patient = $patient->readPatientById();

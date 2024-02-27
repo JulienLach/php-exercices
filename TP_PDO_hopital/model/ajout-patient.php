@@ -83,4 +83,17 @@ class Patient {
         $statement->bindParam(':mail', $this->mail, PDO::PARAM_STR);
         $statement->execute();     
     }
+
+    public function updatePatient() {
+        $connexion = Database::connect();
+        $query = 'UPDATE patients SET lastname = :lastname, firstname = :firstname, birthdate = :birthdate, phone = :phone, mail = :mail WHERE id = :id';
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $statement->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
+        $statement->bindParam(':firstname', $this->firstname, PDO::PARAM_STR);
+        $statement->bindParam(':birthdate', $this->birthdate, PDO::PARAM_STR);
+        $statement->bindParam(':phone', $this->phone, PDO::PARAM_STR);
+        $statement->bindParam(':mail', $this->mail, PDO::PARAM_STR);
+        $statement->execute();
+    }
 }
