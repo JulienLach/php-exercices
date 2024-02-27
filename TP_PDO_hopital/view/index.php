@@ -1,5 +1,5 @@
+<?php include_once 'header.php'; ?>
 
-
-    <?php require_once 'ajout-patient.php';?>
+    <?php include_once 'ajout-patient.php'; ?>
 </body>
 </html>

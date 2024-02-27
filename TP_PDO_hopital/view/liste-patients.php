@@ -1,7 +1,8 @@
-<?php 
-include_once 'header.php';
+<?php
+require_once '../view/header.php';
 require_once '../controller/liste-patients.php';
 ?>
+
 
 <table>
     <tr>
@@ -13,12 +14,14 @@ require_once '../controller/liste-patients.php';
     </tr>
     <?php foreach ($patients as $patient): ?>
     <tr>
-        <td><?= $patient['lastname'] ?></td>
-        <td><?= $patient['firstname'] ?></td>
-        <td><?= $patient['birthdate'] ?></td>
-        <td><?= $patient['phone'] ?></td>
-        <td><?= $patient['mail'] ?></td>
-        <td><a href="profil-patient.php?id=<?= $patient['id'] ?>">Profil</a></td> <!-- On envoie l'id du patient dans l'url pour pouvoir le récupérer dans le fichier profil-patient.php -->
+        <td> <?php echo $patient['lastname'] ?> </td>
+        <td> <?php echo $patient['firstname'] ?> </td>
+        <td> <?php echo $patient['birthdate'] ?> </td>
+        <td> <?php echo $patient['phone'] ?> </td>
+        <td> <?php echo $patient['mail'] ?> </td>
+        <td><a href="profil-patient.php?id=<?php echo $patient['id'] ?>">Modifier</a></td>
     </tr>
     <?php endforeach; ?>
+
 </table>
+

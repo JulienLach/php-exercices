@@ -1,7 +1,8 @@
-<?php require_once '../model/liste-patients.php';
+<?php require_once '../model/patient.php'; ?>
 
-$patients = new ReadPatients();
-$patients = $patients->readPatients();
+<?php
+$patient = new Patient();
+$patients = $patient->getAllPatients();
 
 require_once '../view/liste-patients.php';
 ?>
