@@ -9,7 +9,7 @@ var_dump($patient['lastname']);
 ?>
 
 
-<form class="form" action="../controller/update-patient.php" method="POST">
+<form class="form" action="../controller/do-update-patient.php" method="POST">
 <h3>Modifier un patient</h3>
     <input type="hidden" name="patient_id" value="<?php echo $_GET['id'] ?>">
     <input class="text-form" type="text" name="lastname" placeholder="Nom" value="<?= $patient['lastname'];?>">
