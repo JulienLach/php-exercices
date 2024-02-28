@@ -13,3 +13,4 @@ echo "<strong>Nom du patient : </strong>" . $rendezVous['lastname'] . ' ' . $ren
 
 
 ?>
+<a href="modifier-rendezvous.php?id=<?php echo $_GET['id']; ?>">Modifier rendez-vous patient</a>

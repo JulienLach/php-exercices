@@ -12,8 +12,11 @@ require_once '../controller/liste-rendezvous.php';
     <tr>
         <td><?= $rdv['dateHour'] ;?></td>
         <td><?= $rdv['lastname'] ?></td>
-        <td><a href="rendezvous.php?id=<?php echo $rdv['id'] ?>">Afficher le rendez-vous</a></td>
-        </tr>
+        <td><a href="rendezvous.php?id=<?php echo $rdv['idRendezVous'] ?>">Afficher le rendez-vous</a></td>
+        <?php echo $rdv['idRendezVous']; // trouver comment passer l'ID du RDV pas celui du patient?>
+        <td></td>
+        <td><a href="../controller/supprimer-rendezvous.php?id=<?php echo $rdv['idRendezVous'] ?>">Supprimer le rendez-vous</a></td>
+    </tr>
     <?php endforeach; ?>
 
 </table>
