@@ -18,8 +18,8 @@ require_once '../controller/liste-patients.php';
         <td> <?php echo $patient['birthdate'] ?> </td>
         <td> <?php echo $patient['phone'] ?> </td>
         <td> <?php echo $patient['mail'] ?> </td>
-        <td><a href="profil-patient.php?id=<?php echo $patient['id'] ?>">Afficher profil</a></td>
-        <td><a href="../controller/supprimer-patient-rendezvous.php">Supprimer le patient et ses rendez-vous</a></td>
+        <td><a href="profil-patient.php?id=<?php echo $patient['id']?>">Afficher profil</a></td>
+        <td><a href="../controller/supprimer-patient-rendezvous.php?id=<?php echo $patient['id']?>">Supprimer le patient et ses rendez-vous</a></td>
     </tr>
     <?php endforeach; ?>
 
