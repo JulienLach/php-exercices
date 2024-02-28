@@ -40,7 +40,7 @@ class RendezVous {
     public function getRdvById() {
         if(isset($_GET['id'])) {
             $connexion = Database::connect();
-            $query = 'SELECT * FROM appointments JOIN patients ON appointments.idPatients = patients.id WHERE appointments.id = :id OR appointments.idPatients = :id';
+            $query = 'SELECT * FROM appointments JOIN patients ON appointments.idPatients = patients.id WHERE appointments.idPatients = :id';
             $statement = $connexion->prepare($query);
             $statement->bindValue(':id', $_GET['id']);
             $statement->execute();
@@ -48,6 +48,20 @@ class RendezVous {
             return $rdv;
         }
     }
+
+    public function getRdvByIdInfos() {
+        if(isset($_GET['id'])) {
+            $connexion = Database::connect();
+            $query = 'SELECT * FROM appointments JOIN patients ON appointments.idPatients = patients.id WHERE appointments.id = :id';
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':id', $_GET['id']);
+            $statement->execute();
+            $rdv = $statement->fetch();
+            return $rdv;
+        }
+    }
+
+    // faire une deuxième fonction getRdvById2 pour récupérer les rendez-vous par rapport à l'id du patient
 
     public function updateRendezVous() {
         if(isset($this->id)) {

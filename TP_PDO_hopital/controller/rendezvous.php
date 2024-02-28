@@ -3,4 +3,7 @@
 <?php
 $rendezVous = new RendezVous();
 $rendezVous = $rendezVous->getRdvById();
+
+$rendezVousInfos = new RendezVous();
+$rendezVousInfos = $rendezVousInfos->getRdvByIdInfos();
 ?>
