@@ -2,5 +2,6 @@
 
 <?php
 $patient = new Patient();
-$patient = $patient->getPatientById();
+$patients = $patient->getAllPatients();
+
 ?>
