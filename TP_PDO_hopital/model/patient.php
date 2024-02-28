@@ -75,4 +75,14 @@ class Patient {
             $statement->execute();
         }
     }
+
+    public function deletePatientEtRdv() {
+        if(isset($_GET['id'])) {
+            $connexion = Database::connect();
+            $query = 'DELETE FROM patients WHERE id = :id';
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':id', $_GET['id']);
+            $statement->execute();
+        }
+    }
 }

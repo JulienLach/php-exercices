@@ -61,8 +61,6 @@ class RendezVous {
         }
     }
 
-    // faire une deuxième fonction getRdvById2 pour récupérer les rendez-vous par rapport à l'id du patient
-
     public function updateRendezVous() {
         if(isset($this->id)) {
             $connexion = Database::connect();
