@@ -1,7 +1,13 @@
 <?php require_once '../model/patient.php'; 
 
-$patientsParPage = 2;
-$pageActuelle = 1;
+if(isset($_GET['page']) && !empty($_GET['page'])){
+    $pageActuelle = (int) strip_tags($_GET['page']);
+}else{
+    $pageActuelle = 2;
+}
+
+$patientsParPage = 3;
+
 
 echo "2 Patients maximum par page <br>";
 
