@@ -122,11 +122,13 @@ class Patient {
         return $nombreTotalPatients;
     }
 
-    public function getAllPatientsTEST() {
+    public function getAllPatientsTEST($premierPatient, $patientsParPage) {
         $connexion = Database::connect();
-        $query = 'SELECT * FROM patients LIMIT 0, 2';
+        $query = 'SELECT * FROM patients LIMIT :premierPatient, :patientsParPage';
         $statement = $connexion->prepare($query);
 
+        $statement->bindValue(':premierPatient', $premierPatient, PDO::PARAM_INT); // bind les paramètre $premierPatient et $PatientsParPage
+        $statement->bindValue(':patientsParPage', $patientsParPage, PDO::PARAM_INT);
         // bind les paramètre $premierPatient et $PatientsParPage
 
         $statement->execute();
