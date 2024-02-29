@@ -109,6 +109,28 @@ class Patient {
         }
     }
 
-    
+    ///////////// PARTIE TEST PAGINATION ///////////////
 
+    // Get le nombre total de patients pour la pagination
+    public function getNombreTotalPatients() {
+        $connexion = Database::connect();
+        $query = 'SELECT COUNT(*) as nombreTotalPatients FROM patients';
+        $statement = $connexion->prepare($query);
+        $statement->execute();
+        $result = $statement->fetch();
+        $nombreTotalPatients = $result['nombreTotalPatients'];
+        return $nombreTotalPatients;
+    }
+
+    public function getAllPatientsTEST() {
+        $connexion = Database::connect();
+        $query = 'SELECT * FROM patients LIMIT 0, 2';
+        $statement = $connexion->prepare($query);
+
+        // bind les paramètre $premierPatient et $PatientsParPage
+
+        $statement->execute();
+        $patients = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $patients;
+    }
 }
