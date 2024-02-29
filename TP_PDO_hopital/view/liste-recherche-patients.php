@@ -1,14 +1,7 @@
 <?php
 require_once '../view/header.php';
-require_once '../controller/liste-patients.php';
+require_once '../controller/liste-recherche-patients.php';
 ?>
-
-<form action="../view/liste-recherche-patients.php" method="POST">
-    <strong><label for="search">Rechercher un patient</label></strong>
-    <input name="search" type="search" required>
-    <input type="submit" value="Rechercher un patient">
-</form>
-
 
 <table>
     <tr>
@@ -30,4 +23,3 @@ require_once '../controller/liste-patients.php';
     </tr>
     <?php endforeach; ?>
 </table>
-

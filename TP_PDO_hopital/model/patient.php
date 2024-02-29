@@ -81,6 +81,7 @@ class Patient {
             $connexion = Database::connect();
     
             // Supprimer en premier les rendez-vous associés au patient sinon problème de foreign key
+            // On évite les DELETE avec des JOIN
             $query = 'DELETE FROM appointments WHERE idPatients = :id';
             $statement = $connexion->prepare($query);
             $statement->bindValue(':id', $_GET['id']);
@@ -92,4 +93,22 @@ class Patient {
             $statement->execute();
         }
     }
+
+    public function searchPatients() {
+        if(isset($_POST['search'])) {
+            $connexion = Database::connect();
+            $query = 'SELECT * FROM patients WHERE lastname LIKE :search OR firstname LIKE :search';
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':search', '%' . $_POST['search'] . '%');
+            $statement->execute();
+            $patients = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if(empty($patients)) {
+                echo 'Aucun patient trouvé';
+            }
+            return $patients;
+        }
+    }
+
+    
+
 }
