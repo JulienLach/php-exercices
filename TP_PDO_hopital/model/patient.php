@@ -79,11 +79,14 @@ class Patient {
     public function deletePatientEtRdv() {
         if(isset($_GET['id'])) {
             $connexion = Database::connect();
-            $query = 'DELETE patients, appointments
-            FROM patients
-            LEFT JOIN appointments
-            ON patients.id = appointments.idPatients
-            WHERE patients.id = :id';
+    
+            // Supprimer en premier les rendez-vous associés au patient sinon problème de foreign key
+            $query = 'DELETE FROM appointments WHERE idPatients = :id';
+            $statement = $connexion->prepare($query);
+            $statement->bindValue(':id', $_GET['id']);
+            $statement->execute();
+            // Supprimer le patient
+            $query = 'DELETE FROM patients WHERE id = :id';
             $statement = $connexion->prepare($query);
             $statement->bindValue(':id', $_GET['id']);
             $statement->execute();
