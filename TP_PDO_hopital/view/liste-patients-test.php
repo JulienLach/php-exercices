@@ -1,11 +1,11 @@
-<?php require_once '../controller/liste-patients-test.php'; ?>
+<?php 
+require_once '../controller/liste-patients-test.php'; 
+require_once 'header.php';
+?>
 
 <?php
 
-
 ?>
-
-
 
 <table>
     <tr>
@@ -27,3 +27,13 @@
     </tr>
     <?php endforeach; ?>
 </table>
+<nav>
+    <ul class="pagination">
+        <li class="page-item <?= ($pageActuelle == 1) ? "Disabled" : ""?>">
+            <a class="page-link" href="?page=<?php if($pageActuelle > 1) {echo $pageActuelle - 1;} else {echo $pageActuelle;} ?>">Précédent</a>
+        </li>
+        <li class="page-item <?= ($pageActuelle == $nombrePages) ? "Disabled" : ""?>">
+            <a class="page-link" href="?page=<?php if($pageActuelle < $nombrePages) {echo $pageActuelle + 1;} else {echo $pageActuelle;} ?>">Suivant</a>
+        </li>
+    </ul>
+</nav>
