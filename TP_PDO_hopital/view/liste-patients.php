@@ -1,6 +1,6 @@
 <?php
 require_once '../view/header.php';
-require_once '../controller/liste-patients.php';
+require_once '../controller/liste-patients-pagination.php';
 ?>
 
 <form action="../view/liste-recherche-patients.php" method="POST">
@@ -8,7 +8,6 @@ require_once '../controller/liste-patients.php';
     <input name="search" type="search" required>
     <input type="submit" value="Rechercher un patient">
 </form>
-
 
 <table>
     <tr>
@@ -31,6 +30,17 @@ require_once '../controller/liste-patients.php';
     <?php endforeach; ?>
 </table>
 
-<!-- Pour la pagination il faut passer dans l'URL ?page=2 -->
-<!-- Il faut également connaitre le nombre d'article que l'ont veut par page -->
-<!-- Également le nombre d'article au total pour définir le nombre de page a générer -->
+<nav>
+    <ul class="pagination">
+        <li class="page-item <?= ($pageActuelle == 1) ? "disabled" : ""?>">
+            <a class="page-link" href="?page=<?php if($pageActuelle > 1) {echo $pageActuelle - 1;} else {echo $pageActuelle;} ?>">Précédent</a>
+        </li>
+        <li class="page-item <?= ($pageActuelle == $nombrePages) ? "disabled" : ""?>">
+            <a class="page-link" href="?page=<?php if($pageActuelle < $nombrePages) {echo $pageActuelle + 1;} else {echo $pageActuelle;} ?>">Suivant</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Pour la pagination passer dans l'URL la valeur de la page : ?page=2 -->
+<!-- Connaitre le nombre de patients que l'ont veut par page : = 3 -->
+<!-- Connaitre le nombre de patients au total pour définir le nombre de page à générer -->

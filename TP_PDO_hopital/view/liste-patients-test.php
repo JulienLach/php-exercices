@@ -1,10 +1,6 @@
 <?php 
-require_once '../controller/liste-patients-test.php'; 
-require_once 'header.php';
-?>
-
-<?php
-
+require_once '../view/header.php';
+require_once '../controller/liste-patients-pagination.php'; 
 ?>
 
 <table>
@@ -27,6 +23,7 @@ require_once 'header.php';
     </tr>
     <?php endforeach; ?>
 </table>
+
 <nav>
     <ul class="pagination">
         <li class="page-item <?= ($pageActuelle == 1) ? "Disabled" : ""?>">
@@ -37,3 +34,4 @@ require_once 'header.php';
         </li>
     </ul>
 </nav>
+

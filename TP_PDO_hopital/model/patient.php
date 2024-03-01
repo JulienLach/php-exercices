@@ -109,9 +109,6 @@ class Patient {
         }
     }
 
-    ///////////// PARTIE TEST PAGINATION ///////////////
-
-    // Get le nombre total de patients pour la pagination
     public function getNombreTotalPatients() {
         $connexion = Database::connect();
         $query = 'SELECT COUNT(*) as nombreTotalPatients FROM patients';
@@ -122,11 +119,11 @@ class Patient {
         return $nombreTotalPatients;
     }
 
-    public function getAllPatientsTEST($premierPatient, $patientsParPage) {
+    public function getAllPatientsPagination($premierPatient, $patientsParPage) {
         $connexion = Database::connect();
         $query = 'SELECT * FROM patients LIMIT :premierPatient, :patientsParPage';
         $statement = $connexion->prepare($query);
-        $statement->bindValue(':premierPatient', $premierPatient, PDO::PARAM_INT); // bind les paramètre $premierPatient et $PatientsParPage
+        $statement->bindValue(':premierPatient', $premierPatient, PDO::PARAM_INT);
         $statement->bindValue(':patientsParPage', $patientsParPage, PDO::PARAM_INT);
         $statement->execute();
         $patients = $statement->fetchAll(PDO::FETCH_ASSOC);
