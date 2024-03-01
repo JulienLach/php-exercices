@@ -10,7 +10,7 @@ require_once '../controller/liste-patients-rendezvous.php';
 <select name="idPatient">
 <option value="">Choisir un patient</option>
 <?php foreach($patients as $patient): ?>
-<option value="<?= $patient['id'] ?>"><?= $patient['lastname'] ?></option>
+<option value="<?= $patient['id'] ?>"><?= $patient['lastname'] . " " . $patient['firstname'] ?></option>
 <?php endforeach; ?>
 </select>
 

@@ -9,6 +9,11 @@ class Patient {
     private $birthdate;
     private $phone;
     private $mail;
+    private $dateHour;
+
+    public function setDateHour($dateHour) {
+        $this->dateHour = $dateHour;
+    }
 
     public function setLastname($lastname) {
         $this->lastname = $lastname;
@@ -128,5 +133,26 @@ class Patient {
         $statement->execute();
         $patients = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $patients;
+    }
+
+    public function addPatientsEtRendezvous() {
+        $connexion = Database::connect();
+        $query = 'INSERT INTO patients (lastname, firstname, birthdate, phone, mail) VALUES (:lastname, :firstname, :birthdate, :phone, :mail)';
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':lastname', $this->lastname);
+        $statement->bindParam(':firstname', $this->firstname);
+        $statement->bindParam(':birthdate', $this->birthdate);
+        $statement->bindParam(':mail', $this->mail);
+        $statement->bindParam(':phone', $this->phone);
+        $statement->execute();
+
+        // récupérer l'id du patient ajouté pour ensuite faire l'ajout du rendez-vous avec cet ID
+        $idPatients = $connexion->lastInsertId();
+        
+        $query = 'INSERT INTO appointments (dateHour, idPatients) VALUES (:dateHour, :idPatients)';
+        $statement = $connexion->prepare($query);
+        $statement->bindParam(':dateHour', $this->dateHour);
+        $statement->bindParam(':idPatients', $idPatients);
+        $statement->execute();
     }
 }
