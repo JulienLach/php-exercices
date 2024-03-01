@@ -1,6 +1,5 @@
 <?php 
 require_once '../model/patient.php'; 
-require_once '../model/rendezvous.php';
 ?>
 
 <?php
